@@ -1,4 +1,5 @@
 // Base imports
+
 const express = require("express");
 const bodyParser = require("body-parser");
 
@@ -15,7 +16,7 @@ app.set("view engine", "ejs");
 
 // Load routers
 app.use("", mainRouter);
-app.use("", bookRouter);
+app.use("/books", bookRouter);
 
 app.get("/", (req, res) => {
   res.render("index", { title: "Home" });
